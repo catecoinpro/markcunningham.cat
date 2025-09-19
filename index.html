@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>Mini Blog</title>
@@ -12,11 +12,14 @@
 
   <script>
     async function loadPosts() {
+      const container = document.getElementById("posts");
+      container.innerHTML = "";
+
       try {
         const res = await fetch("/list.json");
+        if (!res.ok) throw new Error("Failed to fetch");
+
         const posts = await res.json();
-        const container = document.getElementById("posts");
-        container.innerHTML = "";
 
         posts.forEach(p => {
           const div = document.createElement("div");
@@ -24,12 +27,15 @@
           div.innerHTML = `
             <h2>${p.title}</h2>
             <p>${p.content}</p>
+            ${p.image ? `<img src="${p.image}" alt="image">` : ""}
+            ${p.youtube ? `<div class="yt"><iframe width="300" src="https://www.youtube.com/embed/${p.youtube}" frameborder="0" allowfullscreen></iframe></div>` : ""}
             <small>${p.date}</small>
           `;
           container.appendChild(div);
         });
+
       } catch (e) {
-        document.getElementById("posts").innerText = "Failed to load posts.";
+        container.innerHTML = "Failed to load posts.";
         console.error(e);
       }
     }
