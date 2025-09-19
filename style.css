@@ -14,3 +14,13 @@ h1 {
   margin: 1em 0;
   padding-bottom: 1em;
 }
+
+.post img {
+  max-width: 100%;
+  display: block;
+  margin-top: 0.5em;
+}
+
+.yt {
+  margin-top: 0.5em;
+}
