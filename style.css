@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: auto;
+  padding: 1em;
+}
+
+h1 {
+  color: #333;
+}
+
+.post {
+  border-bottom: 1px solid #ccc;
+  margin: 1em 0;
+  padding-bottom: 1em;
+}
