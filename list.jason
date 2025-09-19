@@ -1,0 +1,12 @@
+[
+  {
+    "title": "First Post",
+    "content": "This is a sample post.",
+    "date": "2025-09-19"
+  },
+  {
+    "title": "Second Post",
+    "content": "Another sample post.",
+    "date": "2025-09-18"
+  }
+]
